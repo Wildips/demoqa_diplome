@@ -19,18 +19,8 @@
 
 ## Проект реализован с использованием
 
-<img src="images/icons/python-original.svg" width="40" height="40" title="Python"> 
-<img src="images/icons/pytest.png" width="40" height="40" title="Pytest"> 
-<img src="images/icons/intellij_pycharm.png" width="40" height="40" title="PyCharm"> 
-<img src="images/icons/selenium.png" width="40" height="40" title="Selenium"> 
-<img src="images/icons/selene.png" width="40" height="40" title="Selene"> 
-<img src="images/icons/selenoid.png" width="40" height="40" title="Selenoid"> 
-<img src="images/icons/jenkins.png" width="40" height="40" title="Jenkins"> 
-<img src="images/icons/allure_report.png" width="40" height="40" title="Allure Report"> 
-<img src="images/icons/allure_testops.png" width="40" height="40" title="Allure TestOps"> 
-<img src="images/icons/telegram.png" width="40" height="40" title="Telegram"> 
-<img src="images/icons/jira-original.svg" width="40" height="40" title="Jira"> 
- 
+<img src="images/icons/python-original.svg" width="40" height="40" title="Python" alt=""> <img src="images/icons/pytest.png" width="40" height="40" title="Pytest" alt=""> <img src="images/icons/intellij_pycharm.png" width="40" height="40" title="PyCharm" alt=""> <img src="images/icons/selenium.png" width="40" height="40" title="Selenium" alt=""> <img src="images/icons/selene.png" width="40" height="40" title="Selene" alt=""> <img src="images/icons/selenoid.png" width="40" height="40" title="Selenoid" alt=""> <img src="images/icons/jenkins.png" width="40" height="40" title="Jenkins" alt=""> <img src="images/icons/allure_report.png" width="40" height="40" title="Allure Report" alt=""> <img src="images/icons/allure_testops.png" width="40" height="40" title="Allure TestOps" alt=""> <img src="images/icons/telegram.png" width="40" height="40" title="Telegram" alt=""> <img src="images/icons/jira-original.svg" width="40" height="40" title="Jira" alt=""> 
+
 
 [//]: # (![This is an image]&#40;/images/icons/python-original.svg&#41;![This is an image]&#40;/images/icons/pytest.png&#41;![This is an image]&#40;/images/icons/intellij_pycharm.png&#41;![This is an image]&#40;/images/icons/selenium.png&#41;![This is an image]&#40;/images/icons/selene.png&#41;![This is an image]&#40;/images/icons/selenoid.png&#41;![This is an image]&#40;/images/icons/jenkins.png&#41;![This is an image]&#40;/images/icons/allure_report.png&#41;![This is an image]&#40;/images/icons/allure_testops.png&#41;![This is an image]&#40;/images/icons/telegram.png&#41;![This is an image]&#40;/images/icons/jira-original.svg&#41;)
 

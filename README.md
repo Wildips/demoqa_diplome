@@ -19,7 +19,7 @@
 
 ## Проект реализован с использованием
 
-![This is an image](/images/icons/python-original.svg)![This is an image](/images/icons/pytest.png)![This is an image](/images/icons/intellij_pycharm.png)![This is an image](/images/icons/selenium.png)![This is an image](/images/icons/selene.png)![This is an image](/images/icons/selenoid.png)![This is an image](/images/icons/jenkins.png)![This is an image](/images/icons/allure_report.png)![This is an image](/images/icons/allure_testops.png)![This is an image](/images/icons/telegram.png)![This is an image](/images/icons/jira-original.svg)
+![This is an image](/images/icons/python-original.svg) width="50" height="50"![This is an image](/images/icons/pytest.png)![This is an image](/images/icons/intellij_pycharm.png)![This is an image](/images/icons/selenium.png)![This is an image](/images/icons/selene.png)![This is an image](/images/icons/selenoid.png)![This is an image](/images/icons/jenkins.png)![This is an image](/images/icons/allure_report.png)![This is an image](/images/icons/allure_testops.png)![This is an image](/images/icons/telegram.png)![This is an image](/images/icons/jira-original.svg)
 
 ### Параметры сборки
 

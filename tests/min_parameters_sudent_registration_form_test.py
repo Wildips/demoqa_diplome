@@ -4,11 +4,11 @@ from data.users import User, Subject
 from model.pages.registration_page import RegistrationPage
 
 
-def test_student_registration_form(browser_session):
+def test_student_registration_form_min_params(browser_session):
     allure.dynamic.tag("web")
     allure.dynamic.severity(Severity.BLOCKER)
     allure.dynamic.feature("Регистрация пользователя")
-    allure.dynamic.story("Регистрация пользователя с полным набором атрибутов")
+    allure.dynamic.story("Регистрация пользователя с минимально необходимым набором параметров")
 
     ...
 

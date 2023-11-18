@@ -19,7 +19,7 @@
 
 ## Проект реализован с использованием
 
-![This is an image](/images/icons/python-original.svg)![This is an image](/images/icons/pytest.png)![This is an image](/design/icons/intellij_pycharm.png)![This is an image](/design/icons/selenium.png)![This is an image](/design/icons/selene.png)![This is an image](/design/icons/selenoid.png)![This is an image](/design/icons/jenkins.png)![This is an image](/design/icons/allure_report.png)![This is an image](/design/icons/allure_testops.png)![This is an image](/design/icons/telegram.png)![This is an image](/design/icons/jira-original.svg)
+![This is an image](/images/icons/python-original.svg)![This is an image](/images/icons/pytest.png)![This is an image](/images/icons/intellij_pycharm.png)![This is an image](/images/icons/selenium.png)![This is an image](/images/icons/selene.png)![This is an image](/images/icons/selenoid.png)![This is an image](/images/icons/jenkins.png)![This is an image](/images/icons/allure_report.png)![This is an image](/images/icons/allure_testops.png)![This is an image](/images/icons/telegram.png)![This is an image](/images/icons/jira-original.svg)
 
 ### Параметры сборки
 
@@ -69,4 +69,3 @@ allure serve allure-results
 ```
 
 :heart: <a target="_blank" href="https://qa.guru">qa.guru</a><br/>
-:blue_heart: <a target="_blank" href="https://t.me/qa_automation">t.me/qa_automation</a>

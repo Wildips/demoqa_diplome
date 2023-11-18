@@ -19,7 +19,20 @@
 
 ## Проект реализован с использованием
 
-![This is an image](/images/icons/python-original.svg) width="50" height="50"![This is an image](/images/icons/pytest.png)![This is an image](/images/icons/intellij_pycharm.png)![This is an image](/images/icons/selenium.png)![This is an image](/images/icons/selene.png)![This is an image](/images/icons/selenoid.png)![This is an image](/images/icons/jenkins.png)![This is an image](/images/icons/allure_report.png)![This is an image](/images/icons/allure_testops.png)![This is an image](/images/icons/telegram.png)![This is an image](/images/icons/jira-original.svg)
+<img src="images/icons/python-original.svg" width="40" height="40" title="Python"> 
+<img src="images/icons/pytest.png" width="40" height="40" title="Pytest"> 
+<img src="images/icons/intellij_pycharm.png" width="40" height="40" title="PyCharm"> 
+<img src="images/icons/selenium.png" width="40" height="40" title="Selenium"> 
+<img src="images/icons/selene.png" width="40" height="40" title="Selene"> 
+<img src="images/icons/selenoid.png" width="40" height="40" title="Selenoid"> 
+<img src="images/icons/jenkins.png" width="40" height="40" title="Jenkins"> 
+<img src="images/icons/allure_report.png" width="40" height="40" title="Allure Report"> 
+<img src="images/icons/allure_testops.png" width="40" height="40" title="Allure TestOps"> 
+<img src="images/icons/telegram.png" width="40" height="40" title="Telegram"> 
+<img src="images/icons/jira-original.svg" width="40" height="40" title="Jira"> 
+ 
+
+[//]: # (![This is an image]&#40;/images/icons/python-original.svg&#41;![This is an image]&#40;/images/icons/pytest.png&#41;![This is an image]&#40;/images/icons/intellij_pycharm.png&#41;![This is an image]&#40;/images/icons/selenium.png&#41;![This is an image]&#40;/images/icons/selene.png&#41;![This is an image]&#40;/images/icons/selenoid.png&#41;![This is an image]&#40;/images/icons/jenkins.png&#41;![This is an image]&#40;/images/icons/allure_report.png&#41;![This is an image]&#40;/images/icons/allure_testops.png&#41;![This is an image]&#40;/images/icons/telegram.png&#41;![This is an image]&#40;/images/icons/jira-original.svg&#41;)
 
 ### Параметры сборки
 

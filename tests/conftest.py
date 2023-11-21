@@ -6,6 +6,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 from selene.support.shared import browser
+
 # from selene import Browser, Config
 from selene import Config, browser
 
@@ -47,12 +48,10 @@ def browser_session(request):
     driver = webdriver.Remote(
         command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
         # command_executor=f"https://user1:1234@selenoid.autotests.cloud/wd/hub",
-        # options=options,
         options=options,
     )
     # !!!!
     # browser.config.driver = driver
-
 
     # browser = Browser(Config(driver))
 

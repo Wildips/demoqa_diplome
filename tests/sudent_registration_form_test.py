@@ -15,16 +15,10 @@ def test_student_registration_form(browser_session):
 
     # ARRANGE
     student = User(
-        first_name="Some",
-        last_name="User",
-        email="some@user.io",
-        gender="Male",
-        mobile="8800008800",
         date_of_birth="1 September,1939",
         subject=Subject.hindi.value,
         hobbies="Sports",
-        image="test.png",
-        current_address="Far far away",
+        image="images/examples/test.png",
         state="Rajasthan",
         city="Jaipur",
     )
@@ -33,6 +27,7 @@ def test_student_registration_form(browser_session):
 
     # ACTIONS
     registration_page.form_filling(student)
+    registration_page.submit_form()
 
     # ASSERT
-    registration_page.should_registered_user_with(student)
+    registration_page.check_submitting_form_absense()

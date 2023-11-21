@@ -7,8 +7,10 @@ import resource
 from data.users import User
 from utils.log_extending import step
 
+
 class RegistrationPage:
     def __init__(self, browser):
+        # def __init__(self):
         self.browser = browser
         self.first_name = self.browser.element('[id="firstName"]')
         self.last_name = self.browser.element('[id="lastName"]')
@@ -32,7 +34,7 @@ class RegistrationPage:
 
     @step
     def form_filling(self, user: User):
-        with allure.step("Заполняем и отправляем форму"):
+        with allure.step("Заполняем форму"):
             self.first_name.type(user.first_name)
             self.last_name.type(user.last_name)
             self.browser.all("[name=gender]").element_by(
@@ -83,11 +85,14 @@ class RegistrationPage:
                     user.city
                 ).press_enter()
 
+    @step
+    def submit_form(self):
+        with allure.step("Отправляем форму"):
             self.browser.element('[id="submit"]').perform(command.js.click)
 
     # @staticmethod
     @step
-    def should_registered_user_with(self, user: User):
+    def should_registered_user_with(self, user: User | None):
         with allure.step("Проверяем соответствие введенных данных полученным"):
             self.browser.element(
                 '[class="table table-dark table-striped table-bordered table-hover"]'
@@ -105,3 +110,11 @@ class RegistrationPage:
                     f"{user.state} {user.city}",
                 )
             )
+
+    @step
+    def check_submitting_form_absense(self):
+        with allure.step("Проверяем отсутствие формы результатов сабмита"):
+            res = self.browser.element(
+                '[class="table table-dark table-striped table-bordered table-hover"]'
+            )
+            assert not res, "Отобразилась форма результатов сабмита"

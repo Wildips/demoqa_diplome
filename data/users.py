@@ -1,22 +1,22 @@
-import dataclasses
+from dataclasses import dataclass
 from enum import Enum
 from typing import List
 
 
 class Subject(Enum):
-    maths = 'Maths'
-    chemistry = 'Chemistry'
-    english = 'English'
-    biology = 'Biology'
-    hindi = 'Hindi'
+    maths = "Maths"
+    chemistry = "Chemistry"
+    english = "English"
+    biology = "Biology"
+    hindi = "Hindi"
 
 
-@dataclasses.dataclass
+@dataclass
 class User:
-    first_name: str
-    last_name: str
-    gender: str
-    mobile: str
+    first_name: str | None
+    last_name: str | None
+    gender: str | None
+    mobile: str | None
     email: str | None
     date_of_birth: str | None
     # subject: List[Subject] | None

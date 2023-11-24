@@ -7,7 +7,7 @@ from selenium.webdriver.chrome.options import Options
 
 from selene.support.shared import browser
 
-# from selene import Browser, Config
+from selene import Browser, Config
 from selene import Config, browser
 
 from dotenv import load_dotenv
@@ -51,20 +51,21 @@ def browser_session(request):
         options=options,
     )
     # !!!!
-    # browser.config.driver = driver
+    browser.config.driver = driver
 
     # browser = Browser(Config(driver))
-
-    browser.config.driver = driver
-    browser.config.base_url = "https://demoqa.com"
-    browser.config.timeout = 2.0
-    browser.config.window_width = 1920
-    browser.config.window_height = 1080
 
     # browser.driver.base_url = "https://demoqa.com"
     # browser.driver.timeouts = 2.0
     # browser.driver.window_width = 1920
     # browser.driver.window_height = 1080
+
+    # selenoid
+    browser.config.driver = driver
+    browser.config.base_url = "https://demoqa.com"
+    browser.config.timeout = 2.0
+    browser.config.window_width = 1920
+    browser.config.window_height = 1080
 
     yield browser
 

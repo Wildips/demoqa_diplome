@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from enum import Enum
 from typing import List
 
@@ -13,16 +13,17 @@ class Subject(Enum):
 
 @dataclass
 class User:
-    first_name: str | None
-    last_name: str | None
-    gender: str | None
-    mobile: str | None
-    email: str | None
-    date_of_birth: str | None
+    first_name: str = field(repr=False, default="")
+    last_name: str = field(repr=False, default="")
+    gender: str = field(repr=False, default="")
+    mobile: str = field(repr=False, default="")
+    email: str = field(repr=False, default="")
+    date_of_birth: str = field(repr=False, default="")
+    current_address: str = field(repr=False, default="")
+
     # subject: List[Subject] | None
-    subject: Subject | None
-    hobbies: str | None
-    image: str | None
-    current_address: str | None
-    state: str | None
-    city: str | None
+    subject: Subject = field(repr=False, default="")
+    hobbies: str = field(repr=False, default="")
+    image: str = field(repr=False, default="")
+    state: str = field(repr=False, default="")
+    city: str = field(repr=False, default="")

@@ -1,6 +1,6 @@
 import allure
 from allure_commons.types import Severity
-from data.users import User, Subject
+from data.users import User
 from model.pages.registration_page import RegistrationPage
 
 
@@ -12,7 +12,6 @@ def test_student_registration_form_min_params(browser_session):
         "Регистрация пользователя с минимально необходимым набором параметров"
     )
 
-    # browser = browser_session
     registration_page = RegistrationPage(browser_session)
 
     # ARRANGE

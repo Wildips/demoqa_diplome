@@ -14,7 +14,7 @@ def test_student_registration_form_min_params(browser_session):
 
     registration_page = RegistrationPage(browser_session)
 
-    # ARRANGE
+    # ARRANGE (GIVEN)
     student = User(
         first_name="Some",
         last_name="User",
@@ -27,9 +27,9 @@ def test_student_registration_form_min_params(browser_session):
 
     registration_page.open()
 
-    # ACTIONS
+    # ACTIONS (WHEN)
     registration_page.form_filling(student)
     registration_page.submit_form()
 
-    # ASSERT
+    # ASSERT (THEN)
     registration_page.should_registered_user_with(student)

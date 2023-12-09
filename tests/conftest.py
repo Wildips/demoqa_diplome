@@ -7,6 +7,7 @@ from selenium.webdriver.chrome.options import Options
 
 from selene.support.shared import browser
 
+# for local debugging
 from selene import Browser, Config
 from selene import Config, browser
 
@@ -27,7 +28,6 @@ def load_env():
 
 
 @allure.title("Настройка браузера")
-# @pytest.fixture(scope="function", autouse=True)
 @pytest.fixture(scope="function")
 def browser_session(request):
     browser_version = request.config.getoption("--browser-version")
@@ -47,12 +47,14 @@ def browser_session(request):
 
     driver = webdriver.Remote(
         command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
+        # for local debugging
         # command_executor=f"https://user1:1234@selenoid.autotests.cloud/wd/hub",
         options=options,
     )
     # !!!!
     browser.config.driver = driver
 
+    # for local debugging
     # browser = Browser(Config(driver))
 
     # browser.driver.base_url = "https://demoqa.com"

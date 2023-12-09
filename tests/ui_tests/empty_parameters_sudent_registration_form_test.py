@@ -11,11 +11,11 @@ def test_student_registration_form_empty_param(browser_session):
 
     registration_page = RegistrationPage(browser_session)
 
-    # ARRANGE
+    # ARRANGE (GIVEN)
     registration_page.open()
 
-    # ACTIONS
+    # ACTIONS (WHEN)
     registration_page.submit_form()
 
-    # ASSERT
+    # ASSERT (THEN)
     registration_page.check_submitting_form_absense()

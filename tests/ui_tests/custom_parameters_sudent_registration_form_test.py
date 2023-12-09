@@ -14,7 +14,7 @@ def test_student_registration_form_custom_param(browser_session):
 
     registration_page = RegistrationPage(browser_session)
 
-    # ARRANGE
+    # ARRANGE (GIVEN)
     student = User(
         date_of_birth="1 September,1939",
         subject=Subject.hindi.value,
@@ -26,9 +26,9 @@ def test_student_registration_form_custom_param(browser_session):
 
     registration_page.open()
 
-    # ACTIONS
+    # ACTIONS (WHEN)
     registration_page.form_filling(student)
     registration_page.submit_form()
 
-    # ASSERT
+    # ASSERT (THEN)
     registration_page.check_submitting_form_absense()

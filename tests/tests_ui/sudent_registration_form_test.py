@@ -6,20 +6,26 @@ from data.users import User, Subject
 from model.pages.registration_page import RegistrationPage
 
 
-def test_student_registration_form_custom_param(browser_session):
+def test_student_registration_form(browser_session):
     allure.dynamic.tag("web")
     allure.dynamic.severity(Severity.BLOCKER)
     allure.dynamic.feature("Регистрация пользователя")
-    allure.dynamic.story("Регистрация пользователя без обязательных параметров")
+    allure.dynamic.story("Регистрация пользователя с полным набором атрибутов")
 
     registration_page = RegistrationPage(browser_session)
 
     # ARRANGE (GIVEN)
     student = User(
+        first_name="Some",
+        last_name="User",
+        email="some@user.io",
+        gender="Male",
+        mobile="8800008800",
         date_of_birth="1 September,1939",
         subject=Subject.hindi.value,
         hobbies="Sports",
-        image=resource.path("test.png"),
+        image=resource.image_path("test.png"),
+        current_address="Far far away",
         state="Rajasthan",
         city="Jaipur",
     )
@@ -31,4 +37,4 @@ def test_student_registration_form_custom_param(browser_session):
     registration_page.submit_form()
 
     # ASSERT (THEN)
-    registration_page.check_submitting_form_absense()
+    registration_page.should_registered_user_with(student)

@@ -1,6 +1,8 @@
+import json
 import os
 import allure
 import pytest
+import requests
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -16,6 +18,7 @@ from dotenv import load_dotenv
 from utils import attach
 
 DEFAULT_BROWSER_VERSION = "100.0"
+BASE_API_URL = "https://reqres.in/api/"
 
 
 def pytest_addoption(parser):
@@ -77,3 +80,18 @@ def browser_session(request):
     attach.add_video(browser)
 
     browser.quit()
+
+
+@allure.title("Базовый URL API тестов : {BASE_API_URL}")
+@pytest.fixture(scope="function")
+def get_base_api_url():
+    return BASE_API_URL
+
+
+@allure.title("Создаем тестового пользователя")
+@pytest.fixture(scope="function")
+def create_test_user():
+    test_url = f"{BASE_API_URL}users"
+    body = json.loads('{"name": "morpheus1", "job": "leader_new"}')
+    response = requests.post(test_url, data=body)
+    return response.json()["id"]

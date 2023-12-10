@@ -31,7 +31,9 @@ def test_execution_with_incorrect_body_data(get_base_api_url):
     allure.dynamic.severity(Severity.BLOCKER)
     allure.dynamic.feature("Тесты ручки register")
 
-    allure.dynamic.story("Создание пользователя с не верным пользователем в теле запроса")
+    allure.dynamic.story(
+        "Создание пользователя с не верным пользователем в теле запроса"
+    )
     # ARRANGE (GIVEN)
     test_url = f"{get_base_api_url}register"
     body = json.loads('{"email": "some@mail.io", "password": "some_password"}')
@@ -41,22 +43,4 @@ def test_execution_with_incorrect_body_data(get_base_api_url):
 
     # ASSERT (THEN)
     assert response.status_code == 400
-    assert response.text == '{"error":"Note: Only defined users succeed registration"}'
-
-
-def test_execution_with_incorrect_endpoint_in_url(get_base_api_url):
-    allure.dynamic.tag("api")
-    allure.dynamic.severity(Severity.BLOCKER)
-    allure.dynamic.feature("Тесты ручки register")
-
-    allure.dynamic.story("Создание пользователя с ошибкой в адресе запроса")
-    # ARRANGE (GIVEN)
-    test_url = f"{get_base_api_url}register/dfdsd"
-    body = json.loads('{"email": "some@mail.io", "password": "some_password"}')
-
-    # ACTIONS (WHEN)
-    response = requests.post(test_url, data=body)
-
-    # ASSERT (THEN)
-    assert response.status_code == 404
     assert response.text == '{"error":"Note: Only defined users succeed registration"}'

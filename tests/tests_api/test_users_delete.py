@@ -1,10 +1,6 @@
-import jsonschema as jsonschema
 import allure
 import requests
-import json
 from allure_commons.types import Severity
-
-from utils.resource import load_schema
 
 
 def test_correct_execution(get_base_api_url, create_test_user):
@@ -29,7 +25,7 @@ def test_execution_with_unknown_id(get_base_api_url):
     allure.dynamic.severity(Severity.BLOCKER)
     allure.dynamic.feature("Тесты ручки users")
 
-    allure.dynamic.story("Удаление известного пользователя")
+    allure.dynamic.story("Удаление не известного пользователя")
 
     # ARRANGE (GIVEN)
     test_url = f"{get_base_api_url}users/unknown_id"

@@ -55,7 +55,7 @@
 
 ![This is an image](/images/examples/notiffication_example.png)
 
-## Локальный запуск авто-тестов
+## Запуск авто-тестов
 
 Пример командной строки:
 
@@ -65,8 +65,9 @@ source .venv/bin/activate
 pip install -r requirements.txt
 pytest -vv -s . --browser-version=$BROWSER_VERSION
 ```
+где --browser-version не обязательный параметр имеющий значение по умолчанию 100.0
 
-Создание локального отчета отчёта:
+Создание локального отчета:
 
 ```bash
 allure serve allure-results

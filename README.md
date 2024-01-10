@@ -1,6 +1,6 @@
 # Проект по тестированию формы регистрации учетной записи
 
-> <a target="_blank" href="https://qa.guru/">Ресурс организации</a>
+> <a target="_blank" href="https://demoqa.com/">demoqa.com</a>
 
 ![This is an image](/images/examples/test_page.png)
 

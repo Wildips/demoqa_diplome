@@ -55,9 +55,6 @@ class RegistrationPage:
                     f".react-datepicker__day--{day}:not(.react-datepicker__day--outside-month)"
                 ).click()
             if user.subject != "":
-                # browser.element('[id="subjectsInput"]').click().type(
-                #     user.subjects
-                # ).press_enter()
                 self.subject.click().type(user.subject).press_enter()
             if user.hobbies != "":
                 self.browser.all(".custom-checkbox").element_by(

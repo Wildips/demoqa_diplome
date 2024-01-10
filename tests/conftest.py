@@ -1,24 +1,19 @@
-import json
 import os
 import allure
 import pytest
-import requests
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-
-from selene.support.shared import browser
-
-# for local debugging
-from selene import Browser, Config
-from selene import Config, browser
-
+from selene import browser
 from dotenv import load_dotenv
-
 from utils import attach
 
 DEFAULT_BROWSER_VERSION = "100.0"
-BASE_API_URL = "https://reqres.in/api/"
+DEMOQA_BASE_URL = "https://demoqa.com"
+
+BROWSER_WIDTH = 1920
+BROWSER_HEIGHT = 1080
+BROWSER_TIMEOUT = 2.0
 
 
 def pytest_addoption(parser):
@@ -30,47 +25,39 @@ def load_env():
     load_dotenv()
 
 
-@allure.title("Настройка браузера")
+@allure.title("Настройка браузера для теста")
 @pytest.fixture(scope="function")
 def browser_session(request):
     browser_version = request.config.getoption("--browser-version")
     browser_version = (
         browser_version if browser_version != "" else DEFAULT_BROWSER_VERSION
     )
-    options = Options()
-    selenoid_capabilities = {
-        "browserName": "chrome",
-        "browserVersion": browser_version,
-        "selenoid:options": {"enableVNC": True, "enableVideo": True},
-    }
-    options.capabilities.update(selenoid_capabilities)
 
-    login = os.getenv("LOGIN")
-    password = os.getenv("PASSWORD")
+    context = request.config.getoption("--context", default="remote_selenoid")
 
-    driver = webdriver.Remote(
-        command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
-        # for local debugging
-        # command_executor=f"https://user1:1234@selenoid.autotests.cloud/wd/hub",
-        options=options,
-    )
-    # !!!!
-    browser.config.driver = driver
+    if context == "remote_selenoid":
+        login = os.getenv("LOGIN")
+        password = os.getenv("PASSWORD")
 
-    # for local debugging
-    # browser = Browser(Config(driver))
+        options = Options()
+        selenoid_capabilities = {
+            "browserName": "chrome",
+            "browserVersion": browser_version,
+            "selenoid:options": {"enableVNC": True, "enableVideo": True},
+        }
+        options.capabilities.update(selenoid_capabilities)
 
-    # browser.driver.base_url = "https://demoqa.com"
-    # browser.driver.timeouts = 2.0
-    # browser.driver.window_width = 1920
-    # browser.driver.window_height = 1080
+        driver = webdriver.Remote(
+            command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
+            options=options,
+        )
 
-    # selenoid
-    browser.config.driver = driver
-    browser.config.base_url = "https://demoqa.com"
-    browser.config.timeout = 2.0
-    browser.config.window_width = 1920
-    browser.config.window_height = 1080
+        browser.config.driver = driver
+
+    browser.config.base_url = DEMOQA_BASE_URL
+    browser.config.timeout = BROWSER_TIMEOUT
+    browser.config.window_width = BROWSER_WIDTH
+    browser.config.window_height = BROWSER_HEIGHT
 
     yield browser
 
@@ -80,18 +67,3 @@ def browser_session(request):
     attach.add_video(browser)
 
     browser.quit()
-
-
-@allure.title("Базовый URL API тестов : {BASE_API_URL}")
-@pytest.fixture(scope="function")
-def get_base_api_url():
-    return BASE_API_URL
-
-
-@allure.title("Создаем тестового пользователя")
-@pytest.fixture(scope="function")
-def create_test_user():
-    test_url = f"{BASE_API_URL}users"
-    body = json.loads('{"name": "morpheus1", "job": "leader_new"}')
-    response = requests.post(test_url, data=body)
-    return response.json()["id"]

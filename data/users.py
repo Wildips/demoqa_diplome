@@ -1,6 +1,5 @@
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import List
 
 
 class Subject(Enum):
@@ -20,8 +19,6 @@ class User:
     email: str = field(repr=False, default="")
     date_of_birth: str = field(repr=False, default="")
     current_address: str = field(repr=False, default="")
-
-    # subject: List[Subject] | None
     subject: Subject = field(repr=False, default="")
     hobbies: str = field(repr=False, default="")
     image: str = field(repr=False, default="")

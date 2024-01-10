@@ -1,7 +1,7 @@
 import allure
 from allure_commons.types import Severity
 from data.users import User
-from model.pages.registration_page import RegistrationPage
+from models.pages.registration_page import RegistrationPage
 
 
 def test_student_registration_form_min_params(browser_session):

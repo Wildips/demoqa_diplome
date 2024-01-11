@@ -76,4 +76,3 @@ pytest -vv -s . --browser-version=$BROWSER_VERSION --context="remote_selenoid"
 allure serve allure-results
 ```
 
-:heart: <a target="_blank" href="https://qa.guru">qa.guru</a><br/>

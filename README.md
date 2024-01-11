@@ -63,9 +63,12 @@
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-pytest -vv -s . --browser-version=$BROWSER_VERSION
+pytest -vv -s . --browser-version=$BROWSER_VERSION --context="remote_selenoid"
 ```
-где --browser-version не обязательный параметр имеющий значение по умолчанию 100.0
+где:<br/> 
+--browser-version не обязательный параметр имеющий значение по умолчанию 100.0<br/>
+--context не обязательный параметр параметр имеющий значение по умолчанию <br/>
+"remote_selenoid". Для локального запуска тестов должен иметь значение "local"
 
 Создание локального отчета:
 

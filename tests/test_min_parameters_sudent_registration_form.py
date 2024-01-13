@@ -1,12 +1,10 @@
 import allure
-import pytest
 from allure_commons.types import Severity
 from data.users import User
 from models.pages.registration_page import RegistrationPage
 
 
-@pytest.mark.usefixtures("browser_session")
-def test_student_registration_form_min_params():
+def test_student_registration_form_min_params(browser_session):
     allure.dynamic.tag("web")
     allure.dynamic.severity(Severity.BLOCKER)
     allure.dynamic.feature("Регистрация пользователя")

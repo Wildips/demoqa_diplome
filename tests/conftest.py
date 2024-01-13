@@ -14,6 +14,7 @@ DEMOQA_BASE_URL = "https://demoqa.com"
 BROWSER_WIDTH = 1920
 BROWSER_HEIGHT = 1080
 BROWSER_TIMEOUT = 2.0
+BROWSER: browser = None
 
 
 def pytest_addoption(parser):
@@ -27,7 +28,7 @@ def load_env():
 
 
 @allure.title("Настройка браузера для теста")
-@pytest.fixture(scope="function", autouse=True)
+@pytest.fixture(autouse=True)
 def browser_session(request):
     browser_version = request.config.getoption("--browser-version")
     browser_version = (

@@ -12,7 +12,6 @@ class RegistrationPage:
         self.last_name = self.browser.element('[id="lastName"]')
 
         self.subject = self.browser.element('[id="subjectsInput"]')
-        ...
 
     @step
     def open(self):

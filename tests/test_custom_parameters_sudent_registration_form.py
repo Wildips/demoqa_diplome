@@ -1,6 +1,5 @@
 import allure
 from allure_commons.types import Severity
-
 from utils import resource
 from data.users import User, Subject
 from models.pages.registration_page import RegistrationPage

@@ -1,6 +1,5 @@
 import allure
 from selene import have, command, be
-
 from data.users import User
 from utils.log_extending import step
 

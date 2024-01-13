@@ -1,13 +1,8 @@
 from dataclasses import dataclass, field
-from enum import Enum
+from typing import Literal
 
 
-class Subject(Enum):
-    maths = "Maths"
-    chemistry = "Chemistry"
-    english = "English"
-    biology = "Biology"
-    hindi = "Hindi"
+subject_type = Literal["Maths", "Chemistry", "English", "Biology", "Hindi"]
 
 
 @dataclass
@@ -19,7 +14,7 @@ class User:
     email: str = field(repr=False, default="")
     date_of_birth: str = field(repr=False, default="")
     current_address: str = field(repr=False, default="")
-    subject: Subject = field(repr=False, default="")
+    subject: subject_type = field(repr=False, default="")
     hobbies: str = field(repr=False, default="")
     image: str = field(repr=False, default="")
     state: str = field(repr=False, default="")

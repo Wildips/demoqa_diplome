@@ -18,6 +18,7 @@ BROWSER_TIMEOUT = 2.0
 
 def pytest_addoption(parser):
     parser.addoption("--browser-version", default=DEFAULT_BROWSER_VERSION)
+    parser.addoption("--context", default="remote_selenoid")
 
 
 @pytest.fixture(scope="session", autouse=True)
@@ -33,7 +34,7 @@ def browser_session(request):
         browser_version if browser_version != "" else DEFAULT_BROWSER_VERSION
     )
 
-    context = request.config.getoption("--context", default="remote_selenoid")
+    context = request.config.getoption("--context")
 
     if context == "remote_selenoid":
         login = os.getenv("LOGIN")

@@ -1,8 +1,7 @@
 import allure
 from allure_commons.types import Severity
-
 from utils import resource
-from data.users import User, Subject
+from data.users import User
 from models.pages.registration_page import RegistrationPage
 
 
@@ -22,7 +21,7 @@ def test_student_registration_form(browser_session):
         gender="Male",
         mobile="8800008800",
         date_of_birth="1 September,1939",
-        subject=Subject.hindi.value,
+        subject="Hindi",
         hobbies="Sports",
         image=resource.image_path("test.png"),
         current_address="Far far away",

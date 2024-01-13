@@ -5,13 +5,13 @@ from data.users import User
 from models.pages.registration_page import RegistrationPage
 
 
-def test_student_registration_form_custom_param(browser_session):
+def test_student_registration_form_custom_param():
     allure.dynamic.tag("web")
     allure.dynamic.severity(Severity.BLOCKER)
     allure.dynamic.feature("Регистрация пользователя")
     allure.dynamic.story("Регистрация пользователя без обязательных параметров")
 
-    registration_page = RegistrationPage(browser_session)
+    registration_page = RegistrationPage()
 
     # ARRANGE (GIVEN)
     student = User(

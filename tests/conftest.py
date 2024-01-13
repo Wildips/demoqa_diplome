@@ -28,7 +28,7 @@ def load_env():
 
 
 @allure.title("Настройка браузера для теста")
-@pytest.fixture(autouse=True)
+@pytest.fixture(scope="function", autouse=True)
 def browser_session(request):
     browser_version = request.config.getoption("--browser-version")
     browser_version = (

@@ -1,11 +1,11 @@
 import allure
-from selene import have, command, be
+from selene import browser, have, command, be
 from data.users import User
 from utils.log_extending import step
 
 
 class RegistrationPage:
-    def __init__(self, browser):
+    def __init__(self):
         self.browser = browser
         self.first_name = self.browser.element('[id="firstName"]')
         self.last_name = self.browser.element('[id="lastName"]')

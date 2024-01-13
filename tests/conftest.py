@@ -1,7 +1,6 @@
 import os
 import allure
 import pytest
-
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selene import browser
@@ -9,7 +8,6 @@ from dotenv import load_dotenv
 from utils import attach
 
 DEFAULT_BROWSER_VERSION = "100.0"
-DEMOQA_BASE_URL = "https://demoqa.com"
 
 
 def pytest_addoption(parser):
@@ -35,6 +33,7 @@ def browser_session(request):
     if context == "remote_selenoid":
         login = os.getenv("LOGIN")
         password = os.getenv("PASSWORD")
+        remote_browser_url = os.getenv("REMOTE_BROWSER_URL")
 
         options = Options()
         selenoid_capabilities = {
@@ -45,13 +44,13 @@ def browser_session(request):
         options.capabilities.update(selenoid_capabilities)
 
         driver = webdriver.Remote(
-            command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
+            command_executor=f"https://{login}:{password}@{remote_browser_url}/wd/hub",
             options=options,
         )
 
         browser.config.driver = driver
 
-    browser.config.base_url = DEMOQA_BASE_URL
+    browser.config.base_url = "https://demoqa.com"
     browser.config.timeout = 2.0
     browser.config.window_width = 1920
     browser.config.window_height = 1080

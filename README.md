@@ -55,7 +55,7 @@
 
 ![This is an image](/images/examples/notiffication_example.png)
 
-## Запуск авто-тестов
+#### 8. Запуск авто-тестов
 
 Пример командной строки:
 
@@ -76,3 +76,6 @@ pytest -vv -s . --browser-version=$BROWSER_VERSION --context="remote_selenoid"
 allure serve allure-results
 ```
 
+## Пример выполнения удаленного теста
+
+![This is an video](/images/videos/demo_test_execution.mp4)

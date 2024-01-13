@@ -78,4 +78,4 @@ allure serve allure-results
 
 ## Пример выполнения удаленного теста
 
-![This is an video](/images/videos/demo_test_execution.mp4)
+![asciicast](/images/videos/demo_test_execution.mp4)

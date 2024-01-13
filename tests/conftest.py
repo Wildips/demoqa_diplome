@@ -11,11 +11,6 @@ from utils import attach
 DEFAULT_BROWSER_VERSION = "100.0"
 DEMOQA_BASE_URL = "https://demoqa.com"
 
-BROWSER_WIDTH = 1920
-BROWSER_HEIGHT = 1080
-BROWSER_TIMEOUT = 2.0
-BROWSER: browser = None
-
 
 def pytest_addoption(parser):
     parser.addoption("--browser-version", default=DEFAULT_BROWSER_VERSION)
@@ -57,9 +52,9 @@ def browser_session(request):
         browser.config.driver = driver
 
     browser.config.base_url = DEMOQA_BASE_URL
-    browser.config.timeout = BROWSER_TIMEOUT
-    browser.config.window_width = BROWSER_WIDTH
-    browser.config.window_height = BROWSER_HEIGHT
+    browser.config.timeout = 2.0
+    browser.config.window_width = 1920
+    browser.config.window_height = 1080
 
     yield browser
 

@@ -7,10 +7,9 @@ from utils.log_extending import step
 class RegistrationPage:
     def __init__(self):
         self.browser = browser
-        self.first_name = self.browser.element('[id="firstName"]')
-        self.last_name = self.browser.element('[id="lastName"]')
-
-        self.subject = self.browser.element('[id="subjectsInput"]')
+        self.first_name = self.browser.element("#firstName")
+        self.last_name = self.browser.element("#lastName")
+        self.subject = self.browser.element("#subjectsInput")
 
     @step
     def open(self):
@@ -31,9 +30,9 @@ class RegistrationPage:
                     have.value(user.gender)
                 ).element("..").click()
             if user.mobile != "":
-                self.browser.element('[id="userNumber"]').type(user.mobile)
+                self.browser.element("#userNumber").type(user.mobile)
             if user.email != "":
-                self.browser.element('[id="userEmail"]').type(user.email)
+                self.browser.element("#userEmail").type(user.email)
             if user.date_of_birth != "":
                 day = user.date_of_birth.split(" ")[0]
                 if len(str(day)) == 1:
@@ -42,13 +41,9 @@ class RegistrationPage:
                     day = f"0{str(day)}"
                 month = user.date_of_birth.split(" ")[1].split(",")[0]
                 year = user.date_of_birth.split(" ")[1].split(",")[1]
-                self.browser.element('[id="dateOfBirthInput"]').click()
-                self.browser.element('[class="react-datepicker__month-select"]').type(
-                    month
-                )
-                self.browser.element('[class="react-datepicker__year-select"]').type(
-                    year
-                )
+                self.browser.element("#dateOfBirthInput").click()
+                self.browser.element(".react-datepicker__month-select").type(month)
+                self.browser.element(".react-datepicker__year-select").type(year)
                 self.browser.element(
                     f".react-datepicker__day--{day}:not(.react-datepicker__day--outside-month)"
                 ).click()
@@ -59,28 +54,28 @@ class RegistrationPage:
                     have.exact_text(user.hobbies)
                 ).click()
             if user.image != "":
-                self.browser.element('[id="uploadPicture"]').set_value(user.image)
+                self.browser.element("#uploadPicture").set_value(user.image)
             if user.current_address != "":
-                self.browser.element('[id="currentAddress"]').type(user.current_address)
+                self.browser.element("#currentAddress").type(user.current_address)
             if user.state != "":
-                self.browser.element('[id="react-select-3-input"]').type(
+                self.browser.element("#react-select-3-input").type(
                     user.state
                 ).press_enter()
             if user.state != "" and user.city != "":
-                self.browser.element('[id="react-select-4-input"]').type(
+                self.browser.element("#react-select-4-input").type(
                     user.city
                 ).press_enter()
 
     @step
     def submit_form(self):
         with allure.step("Отправляем форму"):
-            self.browser.element('[id="submit"]').perform(command.js.click)
+            self.browser.element("#submit").perform(command.js.click)
 
     @step
     def should_registered_user_with(self, user: User | None):
         with allure.step("Проверяем соответствие введенных данных полученным"):
             element = self.browser.element(
-                '[class="table table-dark table-striped table-bordered table-hover"]'
+                ".table.table-dark.table-striped.table-bordered.table-hover"
             ).all("tr td:nth-child(2)")
             if user.image:
                 element.should(
@@ -117,5 +112,5 @@ class RegistrationPage:
     def check_submitting_form_absense(self):
         with allure.step("Проверяем отсутствие формы результатов сабмита"):
             self.browser.element(
-                '[class="table table-dark table-striped table-bordered table-hover"]'
+                ".table.table-dark.table-striped.table-bordered.table-hover"
             ).should(be.not_.present)

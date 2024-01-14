@@ -1,7 +1,7 @@
 import allure
 from selene import browser, have, command, be
-from data.users import Student
-from utils.log_extending import step
+from demoqa_diplome_tests.data.users import Student
+from demoqa_diplome_tests.utils.log_extending import step
 
 
 class RegistrationPage:

@@ -1,8 +1,8 @@
 import allure
 from allure_commons.types import Severity
-from utils import resource
-from data.users import Student
-from models.pages.registration_page import RegistrationPage
+from demoqa_diplome_tests.utils import resource
+from demoqa_diplome_tests.data.users import Student
+from demoqa_diplome_tests.models.pages.registration_page import RegistrationPage
 
 
 def test_student_registration_form():

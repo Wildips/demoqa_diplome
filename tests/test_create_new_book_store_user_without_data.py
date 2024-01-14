@@ -1,6 +1,6 @@
 import allure
 from allure_commons.types import Severity
-from models.pages.book_store_page import BookStorePage
+from demoqa_diplome_tests.models.pages.book_store_page import BookStorePage
 
 
 def test_create_new_book_store_user_without_data():

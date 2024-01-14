@@ -84,3 +84,7 @@ allure serve allure-results
 ## Пример выполнения удаленного теста
 
 ![This is an video](/images/videos/demo_test_execution.gif)
+
+#### 9. Так же результаты выполнения будут транслированы в Jira
+
+![This is an image](/images/examples/jira_integration.png)

@@ -6,7 +6,7 @@ subject_type = Literal["Maths", "Chemistry", "English", "Biology", "Hindi"]
 
 
 @dataclass
-class User:
+class Student:
     first_name: str = field(repr=False, default="")
     last_name: str = field(repr=False, default="")
     gender: str = field(repr=False, default="")
@@ -19,3 +19,11 @@ class User:
     image: str = field(repr=False, default="")
     state: str = field(repr=False, default="")
     city: str = field(repr=False, default="")
+
+
+@dataclass
+class BookStoreUser:
+    first_name: str = field(repr=False, default="")
+    last_name: str = field(repr=False, default="")
+    user_name: str = field(repr=False, default="")
+    password: str = field(repr=False, default="")

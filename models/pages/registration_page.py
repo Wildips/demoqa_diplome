@@ -1,6 +1,6 @@
 import allure
 from selene import browser, have, command, be
-from data.users import User
+from data.users import Student
 from utils.log_extending import step
 
 
@@ -19,7 +19,7 @@ class RegistrationPage:
             )
 
     @step
-    def form_filling(self, user: User):
+    def form_filling(self, user: Student):
         with allure.step("Заполняем форму"):
             if user.first_name != "":
                 self.first_name.type(user.first_name)
@@ -72,7 +72,7 @@ class RegistrationPage:
             self.browser.element("#submit").perform(command.js.click)
 
     @step
-    def should_registered_user_with(self, user: User | None):
+    def should_registered_user_with(self, user: Student | None):
         with allure.step("Проверяем соответствие введенных данных полученным"):
             element = self.browser.element(
                 ".table.table-dark.table-striped.table-bordered.table-hover"

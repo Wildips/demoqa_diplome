@@ -1,7 +1,7 @@
 import allure
 from allure_commons.types import Severity
 from utils import resource
-from data.users import User
+from data.users import Student
 from models.pages.registration_page import RegistrationPage
 
 
@@ -14,7 +14,7 @@ def test_student_registration_form():
     registration_page = RegistrationPage()
 
     # ARRANGE (GIVEN)
-    student = User(
+    student = Student(
         first_name="Some",
         last_name="User",
         email="some@user.io",

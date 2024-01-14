@@ -8,7 +8,7 @@ def test_login_book_store_without_data():
     allure.dynamic.tag("web")
     allure.dynamic.severity(Severity.BLOCKER)
     allure.dynamic.feature("Вход на книжный склад")
-    allure.dynamic.story("Вход зарегистрированным пользователем")
+    allure.dynamic.story("Вход не зарегистрированным пользователем")
 
     book_store_page = BookStorePage()
 

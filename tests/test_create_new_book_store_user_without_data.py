@@ -6,8 +6,8 @@ from models.pages.book_store_page import BookStorePage
 def test_create_new_book_store_user_without_data():
     allure.dynamic.tag("web")
     allure.dynamic.severity(Severity.BLOCKER)
-    allure.dynamic.feature("Вход на книжный склад")
-    allure.dynamic.story("Вход зарегистрированным пользователем")
+    allure.dynamic.feature("Регистрация пользователя книжного склада")
+    allure.dynamic.story("Вход не зарегистрированным пользователем")
 
     book_store_page = BookStorePage()
 

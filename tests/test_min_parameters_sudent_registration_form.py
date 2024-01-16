@@ -1,7 +1,7 @@
 import allure
 from allure_commons.types import Severity
 from demoqa_diplome_tests.data.users import Student
-from demoqa_diplome_tests.models.pages.registration_page import RegistrationPage
+from demoqa_diplome_tests.models.pages.registration_page import registration_page
 
 
 def test_student_registration_form_min_params():
@@ -11,8 +11,6 @@ def test_student_registration_form_min_params():
     allure.dynamic.story(
         "Регистрация пользователя с минимально необходимым набором параметров"
     )
-
-    registration_page = RegistrationPage()
 
     # ARRANGE (GIVEN)
     student = Student(

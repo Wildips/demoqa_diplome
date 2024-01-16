@@ -1,7 +1,7 @@
 import allure
 from allure_commons.types import Severity
 from demoqa_diplome_tests.data.users import BookStoreUser
-from demoqa_diplome_tests.models.pages.book_store_page import BookStorePage
+from demoqa_diplome_tests.models.pages.book_store_page import book_store_page
 
 
 def test_login_book_store():
@@ -9,8 +9,6 @@ def test_login_book_store():
     allure.dynamic.severity(Severity.BLOCKER)
     allure.dynamic.feature("Вход на книжный склад")
     allure.dynamic.story("Вход зарегистрированным пользователем")
-
-    book_store_page = BookStorePage()
 
     # ARRANGE (GIVEN)
     user = BookStoreUser(

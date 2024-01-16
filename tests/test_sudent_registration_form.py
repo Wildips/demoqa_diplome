@@ -2,7 +2,7 @@ import allure
 from allure_commons.types import Severity
 from demoqa_diplome_tests.utils import resource
 from demoqa_diplome_tests.data.users import Student
-from demoqa_diplome_tests.models.pages.registration_page import RegistrationPage
+from demoqa_diplome_tests.models.pages.registration_page import registration_page
 
 
 def test_student_registration_form():
@@ -10,8 +10,6 @@ def test_student_registration_form():
     allure.dynamic.severity(Severity.BLOCKER)
     allure.dynamic.feature("Регистрация пользователя")
     allure.dynamic.story("Регистрация пользователя с полным набором атрибутов")
-
-    registration_page = RegistrationPage()
 
     # ARRANGE (GIVEN)
     student = Student(

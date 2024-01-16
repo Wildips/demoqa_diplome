@@ -1,7 +1,6 @@
 import allure
 from selene import browser, have, command, be
 from demoqa_diplome_tests.data.users import Student
-from demoqa_diplome_tests.utils.log_extending import step
 
 
 class RegistrationPage:
@@ -11,14 +10,12 @@ class RegistrationPage:
         self.last_name = self.browser.element("#lastName")
         self.subject = self.browser.element("#subjectsInput")
 
-    @step
     def open(self):
         with allure.step("Открываем главную страницу"):
             self.browser.open("/automation-practice-form").wait_until(
                 have.title("DEMOQA")
             )
 
-    @step
     def form_filling(self, user: Student):
         with allure.step("Заполняем форму"):
             if user.first_name != "":
@@ -66,12 +63,10 @@ class RegistrationPage:
                     user.city
                 ).press_enter()
 
-    @step
     def submit_form(self):
         with allure.step("Отправляем форму"):
             self.browser.element("#submit").perform(command.js.click)
 
-    @step
     def should_registered_user_with(self, user: Student | None):
         with allure.step("Проверяем соответствие введенных данных полученным"):
             element = self.browser.element(
@@ -108,9 +103,11 @@ class RegistrationPage:
                     )
                 )
 
-    @step
     def check_submitting_form_absense(self):
         with allure.step("Проверяем отсутствие формы результатов сабмита"):
             self.browser.element(
                 ".table.table-dark.table-striped.table-bordered.table-hover"
             ).should(be.not_.present)
+
+
+registration_page = RegistrationPage()
